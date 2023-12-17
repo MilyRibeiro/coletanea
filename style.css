@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Roboto Mono", monospace;
+    text-align: center;
+    background-image: url("https://i.pinimg.com/1200x/6f/57/c2/6f57c2d23e3760ec89025b0218a3b480.jpg");
+    background-color: #B80000;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .page-title {
+    color: #FFFFFF;
+    margin: 0 0 5px;
+    font-size: 100px;
+  }
+  
+   .page-logo {
+    width: 200px;
+  }
+
+#player-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.5em; 
+  margin: 0 0 20px;
+}
+
+#player-container> p {
+  color: #FCFFE7;
+  font-size: 45px;
+  font-weight: bold;
+}

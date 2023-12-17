@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coletânea</title>
+    <link rel="stylesheet" href="style.css">
+    <script src = "https://www.youtube.com/iframe_api"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">
+          Coletânea
+        </h1>
+        <img src="https://yt3.googleusercontent.com/wjpaQ5FoDDNAx5KPZo5KKxU19i-ePe9h__jd4SF32IZhl2j61xc1w01h6JOW8l3U9CYQFZx2Dw=s900-c-k-c0x00ffffff-no-rj" class="page-logo" alt="Logo IASD">
+      </div>
+      <!-- Adicione no corpo do HTML onde deseja exibir os vídeos -->
+      <div id="player-container"></div>
+    </div>
+
+    <script>
+            var videoData = [
+                { id: 'huKBlsoJJ4s', title: 'Eu quero esse poder' },
+                { id: 'Y-d9ZoUPnbY', title: 'Jerusalém' },
+                { id: 'vu0Dmfzy9Ec', title: 'Fruto da criação' },
+                { id: 'lJBQDkjWkT8', title: 'Medley do coração' },
+                { id: 'U5qH0kgYeFc', title: 'Brilha Jesus' },
+                { id: 'kMiloQOtnG4', title: 'Poderoso Deus' },
+                { id: 'KZkhn10ZxNU', title: 'Vou testemunhar do amor' },
+                { id: 'nhcQxXMoG-E', title: 'Jesus e Eu' },
+                { id: 'oxCLrh1Udg8', title: 'Vou deixar brilhar' }
+                // Adicione mais vídeos conforme necessário
+            ];
+    
+            var players = [];
+    
+            function onYouTubeIframeAPIReady() {
+                var container = document.getElementById('player-container');
+    
+                for (var i = 0; i < videoData.length; i++) {
+                    var playerDiv = document.createElement('div');
+                    playerDiv.id = 'player' + i;
+                    container.appendChild(playerDiv);
+    
+                    players[i] = new YT.Player(playerDiv.id, {
+                        height: '320',
+                        width: '610',
+                        videoId: videoData[i].id,
+                        events: {
+                            'onReady': onPlayerReady,
+                            'onStateChange': onPlayerStateChange
+                        }
+                    });
+    
+                    // Adiciona o título abaixo de cada player
+                    var titleElement = document.createElement('p');
+                    titleElement.textContent = videoData[i].title;
+                    container.appendChild(titleElement);
+                }
+            }
+    
+            function onPlayerReady(event) {
+                // Faça algo quando um player estiver pronto, se necessário
+            }
+    
+            function onPlayerStateChange(event) {
+                // Faça algo quando o estado de um player mudar, se necessário
+            }
+    </script>
+</body>
+</html>
